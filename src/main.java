@@ -17,5 +17,13 @@ public class main {
         for(Usuario u : usuarios) {
             System.out.println(u.getNome());
         }
+
+        System.out.println("\n\n---xxx---\n\n");
+
+        new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                System.out.print(i + " ");
+            }
+        }).start();
     }
 }
