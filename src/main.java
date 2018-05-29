@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class main {
     public static void main(String ... args){
@@ -10,19 +9,13 @@ public class main {
 
         List<Usuario> usuarios = Arrays.asList(usuario1, usuario2, usuario3);
 
-        Mostrador mostrador = new Mostrador();
-        usuarios.forEach(mostrador);
+        // Lambda -> Viva o JavaScript!!!
+        usuarios.forEach(u -> System.out.println(u.getNome()));
 
         System.out.println("\n\n---xxx---\n\n");
 
         for(Usuario u : usuarios) {
             System.out.println(u.getNome());
         }
-    }
-}
-
-class Mostrador implements Consumer<Usuario> {
-    public void accept(Usuario u) {
-        System.out.println(u.getNome());
     }
 }
