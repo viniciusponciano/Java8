@@ -1,5 +1,9 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class main {
     public static void main(String ... args){
@@ -25,5 +29,23 @@ public class main {
                 System.out.print(i + " ");
             }
         }).start();
+
+        System.out.println("\n\n---xxx---\n\n");
+
+        Frame frame = new Frame();
+        Button button = new Button("Clique neste botão!!!");
+        button.addActionListener(event -> {
+            System.out.println("Botão: " + event.getActionCommand() + " clicado!");
+            Random ran = new Random();
+            int color = ran.nextInt();
+            Color cor = new Color(color);
+            button.setBackground(cor);
+        });
+        button.setEnabled(true);
+        button.setVisible(true);
+        frame.add(button);
+        frame.setTitle("Teste");
+        frame.setSize(200, 100);
+        frame.setVisible(true);
     }
 }
